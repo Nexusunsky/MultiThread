@@ -20,10 +20,7 @@ public class FutureData implements IData<String> {
 
     @Override
     public synchronized String getContent() {
-        if (this.realData == null) {
-            throw new NullPointerException("RealData is NULL.");
-        }
-        while (!isSettled) {
+        while (!isSettled || this.realData == null) {
             try {
                 wait();
             } catch (InterruptedException e) {
