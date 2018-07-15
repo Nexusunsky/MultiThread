@@ -1,4 +1,4 @@
-package practice;
+package practice.threadpermessage;
 
 import java.util.Random;
 
